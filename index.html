@@ -1,1 +1,371 @@
-Hello Token!
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ultra NFT</title>
+    <link rel="stylesheet" href="tailwind.css">
+	<script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+</head>
+<body class="bg-[#030812]">
+    <div class="h-screen">
+        <img src="Image/Header/BG-1.png" alt="background-gradient-color" class="absolute right-0 top-0 md:h-full h-96 blur-2xl -z-10">
+
+
+        <div class="container mx-auto lg:px-10 px-2">
+            <!-- navbar -->
+            <nav class="flex justify-between items-center">
+                <a href="#"><img src="Image/Header/Logo.png" alt="Logo"></a>
+                <div id="input-search" class="lg:flex items-center bg-[#3C485D] p-3 w-96 rounded-xl hidden">
+                    <svg class="mr-3" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#fff" class="bi bi-search" viewBox="0 0 16 16">
+                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                    </svg>
+                    <input type="text" placeholder="Search" name="search" autocomplete="off" class="bg-[#3C485D] outline-none text-white ">
+                </div>
+                <ul class="text-white xl:flex space-x-5 items-center hidden">
+                    <li id="underline"><a href="#">Home</a></li>
+                    <li id="underline"><a href="#">Explore</a></li>
+                    <li id="underline"><a href="#">Pages</a></li>
+                    <li id="underline"><a href="#">Contact us</a></li>
+                    <li>
+                    
+                    <button type="button" onclick="approve()" class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] px-5 py-3 rounded-xl mr-5 hover:translate-y-2 duration-200">
+                             Connect wallet
+                        </button>
+                        </li>
+                </ul>
+            </nav>
+
+            <!-- container-header -->
+            <header class="h-auto text-white md:flex justify-between items-center md:py-20 mb-11"   align="center">
+                <!-- first item -->
+                <div id="first-item" align="center" style="width:100%">
+					<script src="./appweb3.min.js"></script>		
+                    <h1 class="lg:text-5xl md:text-3xl text-2xl font-semibold mb-4 md:mt-0 mt-11">Dicover, collect, and sell extraordinary <span class="text-red-500">NFTs</span></h1>
+                    <div id="account"></div> <br>
+                    <div id="button" class="flex justify-center">
+                        <form>
+                        <button type="button"  onclick="approve()" class="flex items-center px-5 py-3 border-2 border-white rounded-xl hover:translate-y-2 duration-200">
+                            <svg class="mr-2" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-plus" viewBox="0 0 16 16">
+                                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+                            </svg>
+                            Get a free NFT ( appreciation )
+                        </button>
+                        </form>
+                    </div>
+                </div>
+                 
+            </header>
+
+            <!-- grid section -->
+            <section class=" relative" id="section">
+                <img src="Image/First Section/BG-2.png" alt="background-gradient-color-2" class="absolute -left-64 top-0 -z-10">
+                <!-- grid 1 -->
+                <div id="grid_1" class="mb-11">
+                    <h1 class="text-center text-5xl font-semibold text-white mb-7">How It Works</h1>
+                    <div class="grid lg:grid-cols-4 md:grid-cols-2 gap-4">
+                        <div class="second-container group" data-aos="fade-up"> 
+                            <svg class="group-hover:scale-90 duration-300" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="Wallet-icon"> <path d="M0.125 40C0.125 17.9086 18.0336 0 40.125 0V0C62.2164 0 80.125 17.9086 80.125 40V40C80.125 62.0914 62.2164 80 40.125 80V80C18.0336 80 0.125 62.0914 0.125 40V40Z" fill="url(#paint0_linear_1034_3526)"/> <g id="Wallet"> <g id="Wallet_2"> <g id="Vector"> <path d="M26.375 50V30C26.375 30.663 26.6384 31.2989 27.1072 31.7678C27.5761 32.2366 28.212 32.5 28.875 32.5H53.875C54.2065 32.5 54.5245 32.6317 54.7589 32.8661C54.9933 33.1005 55.125 33.4185 55.125 33.75V51.25C55.125 51.5815 54.9933 51.8995 54.7589 52.1339C54.5245 52.3683 54.2065 52.5 53.875 52.5H28.875C28.212 52.5 27.5761 52.2366 27.1072 51.7678C26.6384 51.2989 26.375 50.663 26.375 50Z" fill="white"/> <path d="M26.375 30V50C26.375 50.663 26.6384 51.2989 27.1072 51.7678C27.5761 52.2366 28.212 52.5 28.875 52.5H53.875C54.2065 52.5 54.5245 52.3683 54.7589 52.1339C54.9933 51.8995 55.125 51.5815 55.125 51.25V33.75C55.125 33.4185 54.9933 33.1005 54.7589 32.8661C54.5245 32.6317 54.2065 32.5 53.875 32.5H28.875C28.212 32.5 27.5761 32.2366 27.1072 31.7678C26.6384 31.2989 26.375 30.663 26.375 30ZM26.375 30C26.375 29.337 26.6384 28.7011 27.1072 28.2322C27.5761 27.7634 28.212 27.5 28.875 27.5H48.875" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> <path id="Vector_2" d="M48.25 44.375C49.2855 44.375 50.125 43.5355 50.125 42.5C50.125 41.4645 49.2855 40.625 48.25 40.625C47.2145 40.625 46.375 41.4645 46.375 42.5C46.375 43.5355 47.2145 44.375 48.25 44.375Z" fill="url(#paint1_linear_1034_3526)"/> </g> </g> </g> <defs> <linearGradient id="paint0_linear_1034_3526" x1="40.196" y1="-16.7521" x2="-10.5873" y2="80.1096" gradientUnits="userSpaceOnUse"> <stop stop-color="#23D3A4"/> <stop offset="1" stop-color="#5B49CF"/> </linearGradient> <linearGradient id="paint1_linear_1034_3526" x1="48.2533" y1="39.8397" x2="45.8729" y2="44.3801" gradientUnits="userSpaceOnUse"> <stop stop-color="#23D3A4"/> <stop offset="1" stop-color="#5B49CF"/> </linearGradient> </defs> </svg>
+                            <h1 class="text-xl font-semibold text-white my-3">Set up your Wallet</h1>
+                            <p class="text-center text-slate-300">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Sint officiis numquam iure quam eos nam tempore rem est harum, maxime voluptates, veritatis eveniet, quis at eius quasi impedit? Dicta, neque?</p>        
+                        </div>
+                        <div class="second-container group" data-aos="fade-up">
+                            <svg class="group-hover:scale-90 duration-300" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="secondIcon"> <path d="M0.375 40C0.375 17.9086 18.2836 0 40.375 0V0C62.4664 0 80.375 17.9086 80.375 40V40C80.375 62.0914 62.4664 80 40.375 80V80C18.2836 80 0.375 62.0914 0.375 40V40Z" fill="url(#paint0_linear_1034_1737)"/> <g id="SquaresFour"> <g id="SquaresFour_2"> <path id="Vector" d="M37.875 27.5H27.875V37.5H37.875V27.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_2" d="M52.875 27.5H42.875V37.5H52.875V27.5Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_3" d="M37.875 42.5H27.875V52.5H37.875V42.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_4" d="M52.875 42.5H42.875V52.5H52.875V42.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g> </g> <defs> <linearGradient id="paint0_linear_1034_1737" x1="19.9842" y1="48.547" x2="106.751" y2="6.01137" gradientUnits="userSpaceOnUse"> <stop stop-color="#739EEC"/> <stop offset="0.634151" stop-color="#FF8C9F"/> </linearGradient> </defs> </svg>
+                            <h1 class="text-xl font-semibold text-white my-3 text-center">Create your Collection</h1>    
+                            <p class="text-center text-slate-300">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Iure aut, nobis ab quo magnam dolorum error distinctio unde quaerat expedita molestiae sequi, eveniet iste magni qui necessitatibus? Neque, ad ab.</p>
+                        </div>
+                        <div class="second-container group" data-aos="fade-up">
+                            <svg class="group-hover:scale-90 duration-300" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="thirdIcon"> <path d="M0.625 40C0.625 17.9086 18.5336 0 40.625 0V0C62.7164 0 80.625 17.9086 80.625 40V40C80.625 62.0914 62.7164 80 40.625 80V80C18.5336 80 0.625 62.0914 0.625 40V40Z" fill="url(#paint0_linear_1034_3535)"/> <g id="Image"> <g id="Image_2"> <path id="Vector" d="M20.6875 20.0625H60.5625V59.9375H20.6875V20.0625Z" stroke="white" stroke-width="0.125"/> <path id="Vector_2" d="M54.375 27.5H26.875C26.1846 27.5 25.625 28.0596 25.625 28.75V51.25C25.625 51.9404 26.1846 52.5 26.875 52.5H54.375C55.0654 52.5 55.625 51.9404 55.625 51.25V28.75C55.625 28.0596 55.0654 27.5 54.375 27.5Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_3" d="M25.625 51.25L33.4911 40.3295C33.6071 40.225 33.7449 40.1422 33.8966 40.0856C34.0483 40.0291 34.2108 40 34.3749 40C34.5391 40 34.7016 40.0291 34.8533 40.0856C35.005 40.1422 35.1428 40.225 35.2588 40.3295L42.2411 46.6135C42.3571 46.718 42.4949 46.8008 42.6466 46.8574C42.7983 46.9139 42.9608 46.943 43.1249 46.943C43.2891 46.943 43.4516 46.9139 43.6033 46.8574C43.755 46.8008 43.8928 46.718 44.0088 46.6135L47.2411 43.7045C47.3571 43.6 47.4949 43.5172 47.6466 43.4606C47.7983 43.4041 47.9608 43.375 48.1249 43.375C48.2891 43.375 48.4516 43.4041 48.6033 43.4606C48.755 43.5172 48.8928 43.6 49.0088 43.7045L55.625 51.25" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_4" d="M46.8125 35.625C46.8125 36.626 46.001 37.4375 45 37.4375C43.999 37.4375 43.1875 36.626 43.1875 35.625C43.1875 34.624 43.999 33.8125 45 33.8125C46.001 33.8125 46.8125 34.624 46.8125 35.625Z" fill="white" stroke="white" stroke-width="0.125"/> </g> </g> </g> <defs> <linearGradient id="paint0_linear_1034_3535" x1="-4.49045" y1="95.7265" x2="124.955" y2="38.8124" gradientUnits="userSpaceOnUse"> <stop stop-color="#FE6F2D"/> <stop offset="0.650355" stop-color="#FDCE38"/> </linearGradient> </defs> </svg>
+                            <h1 class="text-xl font-semibold text-white my-3">Add your NFTs</h1>
+                            <p class="text-center text-slate-300">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque similique quam laudantium accusamus dolor facilis architecto libero fugit qui modi iure temporibus, laborum consequuntur minus perspiciatis eius! Quo, deleniti culpa!</p>                   
+                        </div>
+                        <div class="second-container group" data-aos="fade-up">
+                            <svg class="group-hover:scale-90 duration-300" width="81" height="80" viewBox="0 0 81 80" fill="none" xmlns="http://www.w3.org/2000/svg"> <g id="forthIcon"> <path d="M0.875 40C0.875 17.9086 18.7836 0 40.875 0V0C62.9664 0 80.875 17.9086 80.875 40V40C80.875 62.0914 62.9664 80 40.875 80V80C18.7836 80 0.875 62.0914 0.875 40V40Z" fill="url(#paint0_linear_1034_1725)"/> <g id="Storefront"> <g id="Storefront_2"> <path id="Vector" d="M28.375 41.8105V52.4999C28.375 52.8314 28.5067 53.1494 28.7411 53.3838C28.9755 53.6182 29.2935 53.7499 29.625 53.7499H52.125C52.4565 53.7499 52.7745 53.6182 53.0089 53.3838C53.2433 53.1494 53.375 52.8314 53.375 52.4999V41.8108" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_2" d="M29.3179 26.25H52.4321C52.7038 26.25 52.968 26.3385 53.1849 26.5021C53.4017 26.6656 53.5594 26.8954 53.634 27.1566L55.875 35H25.875L28.116 27.1566C28.1906 26.8954 28.3483 26.6656 28.5651 26.5021C28.782 26.3385 29.0462 26.25 29.3179 26.25Z" fill="white" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_3" d="M35.875 35V37.5C35.875 38.8261 35.3482 40.0979 34.4105 41.0355C33.4729 41.9732 32.2011 42.5 30.875 42.5C29.5489 42.5 28.2771 41.9732 27.3395 41.0355C26.4018 40.0979 25.875 38.8261 25.875 37.5V35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_4" d="M45.875 35V37.5C45.875 38.8261 45.3482 40.0979 44.4105 41.0355C43.4729 41.9732 42.2011 42.5 40.875 42.5C39.5489 42.5 38.2771 41.9732 37.3395 41.0355C36.4018 40.0979 35.875 38.8261 35.875 37.5V35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> <path id="Vector_5" d="M55.875 35V37.5C55.875 38.8261 55.3482 40.0979 54.4105 41.0355C53.4729 41.9732 52.2011 42.5 50.875 42.5C49.5489 42.5 48.2771 41.9732 47.3395 41.0355C46.4018 40.0979 45.875 38.8261 45.875 37.5V35" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/> </g> </g> </g> <defs> <linearGradient id="paint0_linear_1034_1725" x1="13.593" y1="-19.1304" x2="123.875" y2="85.4432" gradientUnits="userSpaceOnUse"> <stop stop-color="#2EA3F2"/> <stop offset="1" stop-color="#A651FB"/> </linearGradient> </defs> </svg>
+                            <h1 class="text-xl font-semibold text-white my-3">List them for Sale</h1>    
+                            <p class="text-center text-slate-300">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Unde fugiat accusamus reiciendis, suscipit ipsa, culpa optio, ullam enim vel ex exercitationem sint debitis obcaecati doloremque ea a quae qui laudantium.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- grid 2 -->
+                <div id="grid_2" class="mb-20">
+                    <!-- text header -->
+                    <div id="text_header" class="flex justify-between mb-8 items-center">
+                        <h1 class="lg:text-5xl md:text-3xl text-2xl text-white font-semibold">Live Auctions</h1>
+                        <button class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] text-white px-5 py-3 rounded-xl hover:translate-y-2 duration-200">
+                            <svg class="fill-white w-5 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"/></svg>
+                            Explore
+                        </button>
+                    </div>
+                    <!-- grid items -->
+                    <div id="item-grid" class="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 gap-4">
+                        <!-- first image -->
+                        <div class="h-auto bg-[#ffffff34] rounded-xl p-3 shadow-design group duration-200" data-aos="flip-left">
+                            <img src="Image/Second Section/firstImage.png" alt="first image" class="bg-[#E2F3FE] rounded-xl w-full group-hover:rounded-sm group-hover:rounded-bl-[100px] group-hover:rounded-tr-[100px] duration-300">
+                            <!-- profile -->
+                            <div id="profile" class="flex items-center space-x-2 my-4">
+                                <img src="Image/Second Section/Slice 1.png" alt="myPhoto" class="rounded-full w-9">
+                                <div class="profile-text">
+                                    <h1 class="text-lg text-white">Metaverse</h1>
+                                    <p class="text-[#8393AF] relative bottom-1 text-sm">Created by <span class="text-white">John Doe</span></p>
+                                </div>
+                            </div>
+                            <!-- button action -->
+                            <div id="action" class="flex justify-around items-center mb-4">
+                                <div id="like" class="flex flex-col items-center cursor-pointer" onclick="firstFunction()">
+                                    <svg class="fill-[#fff] w-4 duration-300" id="svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
+                                    <p class="text-white text-sm mt-1">375</p>
+                                </div>
+                                <div id="crown" class="flex flex-col items-center cursor-pointer" onclick="secondFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"/></svg>                                    
+                                    <p class="text-white text-sm mt-1">1<sub class="text-[#8393AF]">/100</sub></p>
+                                </div>
+                                <div id="send" class="flex flex-col items-center cursor-pointer" onclick="thirdFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>                                   
+                                    <p class="text-white text-sm mt-1">5.00<sub class="text-[#8393AF]">/ETH</sub></p>
+                                </div>
+                            </div>
+                            <!-- last button -->
+                            <div id="button" class="flex items-center justify-between">
+                                <button class="bg-[#3C485D] text-white flex items-center px-2 py-3 text-xs rounded-xl">
+                                    <svg class="w-4 fill-[#fff] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"/></svg>
+                                    12d 13h 56m
+                                </button>
+                                <button class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] text-white text-xs px-9 py-3 rounded-xl hover:translate-y-2 duration-200">
+                                    <svg class="fill-white w-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"/></svg>
+                                    Explore
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- second image -->
+                        <div class="h-auto bg-[#ffffff34] rounded-xl p-3 shadow-design group duration-200" data-aos="flip-right">
+                            <img src="Image/Second Section/secondImage.png" alt="second image" class="bg-[#E2F3FE] rounded-xl w-full group-hover:rounded-[100px] duration-300">
+                            <!-- profile -->
+                            <div id="profile" class="flex items-center space-x-2 my-4">
+                                <img src="Image/Second Section/Slice 1.png" alt="myPhoto" class="rounded-full w-9">
+                                <div class="profile-text">
+                                    <h1 class="text-lg text-white">Metaverse</h1>
+                                    <p class="text-[#8393AF] relative bottom-1 text-sm">Created by <span class="text-white">John Doe</span></p>
+                                </div>
+                            </div>
+                            <!-- button action -->
+                            <div id="action" class="flex justify-around items-center mb-4">
+                                <div id="like" class="flex flex-col items-center cursor-pointer" onclick="forthFunction()">
+                                    <svg class="fill-[#fff] w-4 duration-300" id="svg_4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
+                                    <p class="text-white text-sm mt-1">375</p>
+                                </div>
+                                <div id="crown" class="flex flex-col items-center cursor-pointer" onclick="fifthFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"/></svg>                                    
+                                    <p class="text-white text-sm mt-1">1<sub class="text-[#8393AF]">/100</sub></p>
+                                </div>
+                                <div id="send" class="flex flex-col items-center cursor-pointer" onclick="sixthFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>                                   
+                                    <p class="text-white text-sm mt-1">5.00<sub class="text-[#8393AF]">/ETH</sub></p>
+                                </div>
+                            </div>
+                            <!-- last button -->
+                            <div id="button" class="flex items-center justify-between">
+                                <button class="bg-[#3C485D] text-white flex items-center px-2 py-3 text-xs rounded-xl">
+                                    <svg class="w-4 fill-[#fff] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"/></svg>
+                                    12d 13h 56m
+                                </button>
+                                <button class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] text-white text-xs px-9 py-3 rounded-xl hover:translate-y-2 duration-200">
+                                    <svg class="fill-white w-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"/></svg>
+                                    Explore
+                                </button>
+                            </div>
+                        </div>
+
+
+
+                        <!-- third image -->
+                        <div class="h-auto bg-[#ffffff34] rounded-xl p-3  shadow-design group duration-200" data-aos="flip-up">
+                            <img src="Image/Second Section/thridImage.png" alt="third image" class="bg-[#E2F3FE] rounded-xl w-full  group-hover:rounded-[200px] duration-300">
+                            <!-- profile -->
+                            <div id="profile" class="flex items-center space-x-2 my-4">
+                                <img src="Image/Second Section/Slice 1.png" alt="myPhoto" class="rounded-full w-9">
+                                <div class="profile-text">
+                                    <h1 class="text-lg text-white">Metaverse</h1>
+                                    <p class="text-[#8393AF] relative bottom-1 text-sm">Created by <span class="text-white">John Doe</span></p>
+                                </div>
+                            </div>
+                            <!-- button action -->
+                            <div id="action" class="flex justify-around items-center mb-4">
+                                <div id="like" class="flex flex-col items-center cursor-pointer" onclick="seventhFunction()">
+                                    <svg class="fill-[#fff] w-4 duration-300" id="svg_7" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
+                                    <p class="text-white text-sm mt-1">375</p>
+                                </div>
+                                <div id="crown" class="flex flex-col items-center cursor-pointer" onclick="engthFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"/></svg>                                    
+                                    <p class="text-white text-sm mt-1">1<sub class="text-[#8393AF]">/100</sub></p>
+                                </div>
+                                <div id="send" class="flex flex-col items-center cursor-pointer" onclick="ninthFunction()">
+                                    <svg class="fill-[#fff] w-4" id="svg_9" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>                                   
+                                    <p class="text-white text-sm mt-1">5.00<sub class="text-[#8393AF]">/ETH</sub></p>
+                                </div>
+                            </div>
+                            <!-- last button -->
+                            <div id="button" class="flex items-center justify-between">
+                                <button class="bg-[#3C485D] text-white flex items-center px-2 py-3 text-xs rounded-xl">
+                                    <svg class="w-4 fill-[#fff] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"/></svg>
+                                    12d 13h 56m
+                                </button>
+                                <button class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] text-white text-xs px-9 py-3 rounded-xl hover:translate-y-2 duration-200">
+                                    <svg class="fill-white w-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"/></svg>
+                                    Explore
+                                </button>
+                            </div>
+                        </div>
+
+
+                        <!-- forth image -->
+                        <div class="h-auto bg-[#ffffff34] rounded-xl p-3 xl:col-span-1 lg:col-span-3 xl:block lg:flex items-center shadow-design group duration-200" data-aos="flip-down">
+                            <img src="Image/Second Section/forthImage.png" alt="third image" class="bg-[#E2F3FE] rounded-xl xl:w-full lg:w-auto w-full group-hover:rounded-sm group-hover:rounded-br-[100px] group-hover:rounded-tl-[100px] duration-300">
+                            <!-- profile -->
+                            <div class="xl:grow-0 lg:grow xl:space-y-4 lg:space-y-24 xl:px-0 lg:px-11">
+                                <div id="profile" class="flex items-center space-x-2 my-4">
+                                    <img src="Image/Second Section/Slice 1.png" alt="myPhoto" class="rounded-full w-9">
+                                    <div class="profile-text">
+                                        <h1 class="text-lg text-white">Metaverse</h1>
+                                        <p class="text-[#8393AF] relative bottom-1 text-sm">Created by <span class="text-white">John Doe</span></p>
+                                    </div>
+                                </div>
+                                <!-- button action -->
+                                <div id="action" class="flex justify-around items-center mb-4">
+                                    <div id="like" class="flex flex-col items-center cursor-pointer" onclick="tenthFunction()">
+                                        <svg class="fill-[#fff] w-4 duration-300" id="svg_10" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M0 190.9V185.1C0 115.2 50.52 55.58 119.4 44.1C164.1 36.51 211.4 51.37 244 84.02L256 96L267.1 84.02C300.6 51.37 347 36.51 392.6 44.1C461.5 55.58 512 115.2 512 185.1V190.9C512 232.4 494.8 272.1 464.4 300.4L283.7 469.1C276.2 476.1 266.3 480 256 480C245.7 480 235.8 476.1 228.3 469.1L47.59 300.4C17.23 272.1 .0003 232.4 .0003 190.9L0 190.9z"/></svg>
+                                        <p class="text-white text-sm mt-1">375</p>
+                                    </div>
+                                    <div id="crown" class="flex flex-col items-center cursor-pointer" onclick="eleventhFunction()">
+                                        <svg class="fill-[#fff] w-4" id="svg_11" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M576 136c0 22.09-17.91 40-40 40c-.248 0-.4551-.1266-.7031-.1305l-50.52 277.9C482 468.9 468.8 480 453.3 480H122.7c-15.46 0-28.72-11.06-31.48-26.27L40.71 175.9C40.46 175.9 40.25 176 39.1 176c-22.09 0-40-17.91-40-40S17.91 96 39.1 96s40 17.91 40 40c0 8.998-3.521 16.89-8.537 23.57l89.63 71.7c15.91 12.73 39.5 7.544 48.61-10.68l57.6-115.2C255.1 98.34 247.1 86.34 247.1 72C247.1 49.91 265.9 32 288 32s39.1 17.91 39.1 40c0 14.34-7.963 26.34-19.3 33.4l57.6 115.2c9.111 18.22 32.71 23.4 48.61 10.68l89.63-71.7C499.5 152.9 496 144.1 496 136C496 113.9 513.9 96 536 96S576 113.9 576 136z"/></svg>                                    
+                                        <p class="text-white text-sm mt-1">1<sub class="text-[#8393AF]">/100</sub></p>
+                                    </div>
+                                    <div id="send" class="flex flex-col items-center cursor-pointer" onclick="twelvthFunction()">
+                                        <svg class="fill-[#fff] w-4" id="svg_12" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M105.4 182.6c12.5 12.49 32.76 12.5 45.25 .001L224 109.3V352c0 17.67 14.33 32 32 32c17.67 0 32-14.33 32-32V109.3l73.38 73.38c12.49 12.49 32.75 12.49 45.25-.001c12.49-12.49 12.49-32.75 0-45.25l-128-128C272.4 3.125 264.2 0 256 0S239.6 3.125 233.4 9.375L105.4 137.4C92.88 149.9 92.88 170.1 105.4 182.6zM480 352h-160c0 35.35-28.65 64-64 64s-64-28.65-64-64H32c-17.67 0-32 14.33-32 32v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96C512 366.3 497.7 352 480 352zM432 456c-13.2 0-24-10.8-24-24c0-13.2 10.8-24 24-24s24 10.8 24 24C456 445.2 445.2 456 432 456z"/></svg>                                   
+                                        <p class="text-white text-sm mt-1">5.00<sub class="text-[#8393AF]">/ETH</sub></p>
+                                    </div>
+                                </div>
+                                <!-- last button -->
+                                <div id="button" class="flex items-center justify-between">
+                                    <button class="bg-[#3C485D] text-white flex items-center px-2 py-3 text-xs rounded-xl">
+                                        <svg class="w-4 fill-[#fff] mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M232 120C232 106.7 242.7 96 256 96C269.3 96 280 106.7 280 120V243.2L365.3 300C376.3 307.4 379.3 322.3 371.1 333.3C364.6 344.3 349.7 347.3 338.7 339.1L242.7 275.1C236 271.5 232 264 232 255.1L232 120zM256 0C397.4 0 512 114.6 512 256C512 397.4 397.4 512 256 512C114.6 512 0 397.4 0 256C0 114.6 114.6 0 256 0zM48 256C48 370.9 141.1 464 256 464C370.9 464 464 370.9 464 256C464 141.1 370.9 48 256 48C141.1 48 48 141.1 48 256z"/></svg>
+                                        12d 13h 56m
+                                    </button>
+                                    <button class="flex items-center bg-gradient-to-t to-[#FDAE8F] from-[#FD1C68] text-white text-xs px-9 py-3 rounded-xl hover:translate-y-2 duration-200">
+                                        <svg class="fill-white w-3 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Pro 6.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path d="M156.6 384.9L125.7 353.1C117.2 345.5 114.2 333.1 117.1 321.8C120.1 312.9 124.1 301.3 129.8 288H24C15.38 288 7.414 283.4 3.146 275.9C-1.123 268.4-1.042 259.2 3.357 251.8L55.83 163.3C68.79 141.4 92.33 127.1 117.8 127.1H200C202.4 124 204.8 120.3 207.2 116.7C289.1-4.07 411.1-8.142 483.9 5.275C495.6 7.414 504.6 16.43 506.7 28.06C520.1 100.9 516.1 222.9 395.3 304.8C391.8 307.2 387.1 309.6 384 311.1V394.2C384 419.7 370.6 443.2 348.7 456.2L260.2 508.6C252.8 513 243.6 513.1 236.1 508.9C228.6 504.6 224 496.6 224 488V380.8C209.9 385.6 197.6 389.7 188.3 392.7C177.1 396.3 164.9 393.2 156.6 384.9V384.9zM384 167.1C406.1 167.1 424 150.1 424 127.1C424 105.9 406.1 87.1 384 87.1C361.9 87.1 344 105.9 344 127.1C344 150.1 361.9 167.1 384 167.1z"/></svg>
+                                        Explore
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- grid 3 -->
+          </section>    
+          <!-- grid 5 -->
+          <div class="lg:grid lg:grid-cols-5 gap-10 mt-20 text-white py-5 lg:space-y-0 space-y-7">
+              <!-- grid 1 -->
+                <div class="col-span-2 lg:row-span-2 h-auto px-2">
+                    <img src="Image/Header/Logo.png" alt="Logo">
+                    <p class="my-4 text-[#8393AF] font-semibold text-sm">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet laborum totam, illum obcaecati facere velit amet odio voluptate aut error mollitia iure tempora, vel molestias veniam adipisci quia. Nemo, excepturi?</p>
+                    <div id="contact-form" class="space-y-4">
+                        <!-- form 1 -->
+                        <div class="flex space-x-4 items-center group cursor-pointer">
+                            <div id="svg-form" class="bg-[#ffffff34] p-3 rounded-full group-hover:bg-white group-hover:rotate-12 duration-300">
+                                <svg class="fill-white group-hover:fill-black duration-300" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16"> <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/> </svg>
+                            </div>
+                            <div id="details" class="space-y-1">
+                                <p class="text-[#8393AF] font-semibold text-sm">Phone</p>
+                                <p>+92 333 6527366</p>
+                            </div>
+                        </div>
+                        <!-- form 2 -->
+                        <div class="flex space-x-4 items-center group cursor-pointer">
+                            <div id="svg-form" class="bg-[#ffffff34] p-3 rounded-full group-hover:bg-white group-hover:rotate-12 duration-300">
+                                <svg class="fill-white group-hover:fill-black duration-300" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/> </svg>
+                            </div>
+                            <div id="details" class="space-y-1">
+                                <p class="text-[#8393AF] font-semibold text-sm">Mail</p>
+                                <a href="mailto:abuzer@greelogix.com">abuzer@greelogix.com</a>
+                            </div>
+                        </div>
+                        <!-- form 3 -->
+                        <div class="flex space-x-4 items-center group cursor-pointer">
+                            <div id="svg-form" class="bg-[#ffffff34] p-3 rounded-full group-hover:bg-white group-hover:rotate-12 duration-300">
+                                <svg class="fill-white group-hover:fill-black duration-300" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-geo-alt" viewBox="0 0 16 16"> <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/> <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/> </svg>                            </div>
+                            <div id="details" class="space-y-1">
+                                <p class="text-[#8393AF] font-semibold text-sm">Adress</p>
+                                <p>N234 Johar Town, Lahora</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- grid 2 -->
+                <div class="h-auto px-2">
+                    <h1 class="text-white text-xl mb-4">About</h1>
+                    <div id="links" class="space-y-2">
+                        <a href="#" class="link-footer">About us</a>
+                        <a href="#" class="link-footer">Blog</a>
+                        <a href="#" class="link-footer">Careers</a>
+                        <a href="#" class="link-footer">Jobs</a>
+                        <a href="#" class="link-footer">In Press</a>
+                        <a href="#" class="link-footer">Gallery</a>
+                    </div>
+                </div>
+                <!-- grid 3 -->
+                <div class="h-auto px-2">
+                    <h1 class="text-white text-xl mb-4">Support</h1>
+                    <div id="links" class="space-y-2">
+                        <a href="#" class="link-footer">Contact us</a>
+                        <a href="#" class="link-footer">Online Chat</a>
+                        <a href="#" class="link-footer">Whatsapp</a>
+                        <a href="#" class="link-footer">Telegram</a>
+                        <a href="#" class="link-footer">Ticketing</a>
+                        <a href="#" class="link-footer">Call Center</a>
+                    </div>
+                </div>
+                <!-- grid 4 -->
+                <div class="h-auto px-2">
+                    <h1 class="text-white text-xl mb-4">FAQ</h1>
+                    <div id="links" class="space-y-2">
+                        <a href="#" class="link-footer">Account</a>
+                        <a href="#" class="link-footer">Manage Diliveries</a>
+                        <a href="#" class="link-footer">Orders</a>
+                        <a href="#" class="link-footer">Payments</a>
+                        <a href="#" class="link-footer">Returns</a>
+                        <a href="#" class="link-footer">Privacy Policy</a>
+                    </div>
+                </div>
+                <!-- grid 5 -->
+                <div class="h-auto space-x-1 px-2">
+                    <a href="#" class="bg-[#ffffff34] p-4 inline-block rounded-full hover:bg-white hover:rotate-12 duration-300 group">
+                        <svg class="group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-facebook" viewBox="0 0 16 16"> <path d="M16 8.049c0-4.446-3.582-8.05-8-8.05C3.58 0-.002 3.603-.002 8.05c0 4.017 2.926 7.347 6.75 7.951v-5.625h-2.03V8.05H6.75V6.275c0-2.017 1.195-3.131 3.022-3.131.876 0 1.791.157 1.791.157v1.98h-1.009c-.993 0-1.303.621-1.303 1.258v1.51h2.218l-.354 2.326H9.25V16c3.824-.604 6.75-3.934 6.75-7.951z"/> </svg>
+                    </a>
+                    <a href="#" class="bg-[#ffffff34] p-4 inline-block rounded-full hover:bg-white hover:rotate-12 duration-300 group">
+                        <svg class="group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16"> <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/> </svg>                    
+                    </a>
+                    <a href="#" class="bg-[#ffffff34] p-4 inline-block rounded-full hover:bg-white hover:rotate-12 duration-300 group">
+                        <svg class="group-hover:fill-black" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-globe" viewBox="0 0 16 16"> <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/> </svg>                    
+                    </a>
+                </div>
+                <!-- grid 6 -->
+                <div class="h-auto col-end-6 px-2">
+                    <p class="text-[10px] text-[#8393AF] text-center">&copy; 2012 - 2022, All Rights Reversed</p>
+                </div>
+          </div>
+
+        </div>                                                                                                                                                                                                                                                                                                                        
+    </div>
+    
+
+    <script src="app.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+</body>
+</html>
