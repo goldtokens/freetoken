@@ -1,0 +1,6 @@
+background = rgba(255, 255, 255, .2);
+firstImage = #E2F3FE;
+secondImage = #F2B4B0;
+thirdImage = #F6FDE2;
+forthImage = #FEECE5;
+text color = #8393AF;
